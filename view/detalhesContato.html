@@ -1,0 +1,24 @@
+<div class="jumbotron">
+    <h3>Detalhes do contato</h3>
+    <table class="table">
+        <tr class="start">
+            <td>Nome:</td>
+            <td>{{contato.nome | name}}</td>
+        </tr>
+        <tr class="start">
+            <td>Número:</td>
+            <td>{{contato.telefone}}</td>
+        </tr>
+        <tr class="start">
+            <td>Data de inclusão:</td>
+            <td>{{contato.data | date:"dd/MM/yyyy"}}</td>
+        </tr>
+        <tr class="start">
+            <td>Alterado em:</td>
+            <td>{{contato.dataAlteracao | date:"dd/MM/yyyy"}}</td>
+        </tr>
+    </table>
+    <a class="btn btn-primary btn-block" href="#!/editar-contato/{{contato.codigo}}">Editar Contato</a>
+    <button class="btn btn-danger btn-block" ng-click="deleteContato(contato.codigo)">Apagar Contato</button>
+    <a class="btn btn-light btn-block" href="#!/contatos">Voltar</a>
+</div>

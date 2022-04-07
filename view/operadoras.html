@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <h3>Operadoras</h3>
+    <hr/>
+    <input type="text" class="form-control" ng-model="criterioBusca" placeholder="Buscar por..."/>
+    <table ng-show="operadoras.length > 0" class="table table-striped">
+        <tr>
+            <th></th>
+            <th><a href="" ng-click="ordenarPor('nome')">Nome</a></th>
+            <th>Código de área</th>
+            <th>Valor</th>
+        </tr>
+        <tr ng-class="{'selecionado negrito': operadora.selecionado}" ng-repeat="operadora in operadoras | filter:criterioBusca | orderBy:criterioOrdenacao:direcaoOrdenacao">
+            <td><input type="checkbox" ng-model="operadora.selecionado"/></td>
+            <td><a href="#!/detalhes-operadora/{{operadora.codigo}}">{{operadora.nome | name | ellipsis:14}}</a></td>
+            <td>{{operadora.codigoArea}}</td>
+            <td>{{operadora.preco}}</td>
+        </tr>
+    </table>
+    <hr/>
+    <a class="btn btn-primary btn-block" href="#!/nova-operadora">Nova Operadora</a>
+    <a class="btn btn-primary btn-block" href="#!/contatos">Contatos</a>
+    <button class="btn btn-danger btn-block" ng-click="apagarOperadoras(operadoras)" ng-if="isOperadoraSelecionada(operadoras)">Apagar Operadoras</button>
+</div>

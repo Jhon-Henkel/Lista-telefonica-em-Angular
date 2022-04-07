@@ -1,0 +1,28 @@
+<div class="jumbotron">
+    <h3>Detalhes da Operadora</h3>
+    <table class="table">
+        <tr class="start">
+            <td>Nome:</td>
+            <td>{{operadora.nome | name}}</td>
+        </tr>
+        <tr class="start">
+            <td>Código de área:</td>
+            <td>{{operadora.codigoArea}}</td>
+        </tr>
+        <tr class="start">
+            <td>Valor do minuto:</td>
+            <td>{{operadora.preco}}</td>
+        </tr>
+        <tr class="start">
+            <td>Data de inclusão:</td>
+            <td>{{operadora.data | date:"dd/MM/yyyy"}}</td>
+        </tr>
+        <tr class="start">
+            <td>Alterado em:</td>
+            <td>{{operadora.dataAlteracao | date:"dd/MM/yyyy"}}</td>
+        </tr>
+    </table>
+    <a class="btn btn-primary btn-block" href="#!/editar-operadora/{{operadora.codigo}}">Editar Operadora</a>
+    <button class="btn btn-danger btn-block" ng-click="deleteOperadora(operadora.codigo)">Apagar Operadora</button>
+    <a class="btn btn-light btn-block" href="#!/operadoras">Voltar</a>
+</div>
