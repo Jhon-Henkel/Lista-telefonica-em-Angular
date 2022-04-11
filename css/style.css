@@ -12,7 +12,7 @@
     margin-bottom: 5px;
 }
 .selecionado {
-    background-color: #f1d88c;
+    background-color: #f1d88c !important;
 }
 .negrito {
     font-weight: bold;

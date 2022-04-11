@@ -1,17 +1,11 @@
 <?php
-$filePatch = '../../database/operadoras.json';
-
-$json = file_get_contents($filePatch);
-$codigo = file_get_contents('php://input');
-$operadoras = json_decode($json, true);
+require '../functions.php';
+$operadoras = json_decode(obterJson('operadoras'),true);
 
 foreach ($operadoras as $operadora => $row) {
-    if ($row['codigo'] === $codigo) {
+    if ($row['codigo'] === file_get_contents('php://input')) {
         unset($operadoras[$operadora]);
         rsort($operadoras);
-        $newJson = json_encode($operadoras);
-        $jsonOpen = fopen($filePatch, 'w');
-        fwrite($jsonOpen, $newJson);
-        fclose($jsonOpen);
+        gravarJson($operadoras,'operadoras');
     }
 }

@@ -10,7 +10,7 @@ angular.module("listaTelefonica").directive("uiPhone", function () {
                 }
                 if (phone.length > 3) {
                     if (phone.length > 13) {
-                        phone = phone.substring(0,10) + "-" + phone.substring(10,14);
+                        phone = phone.substring(0, 10) + "-" + phone.substring(10, 14);
                     }
                     if (phone.length <= 14) {
                         phone = phone.substring(0, 9) + "-" + phone.substring(9, 14);

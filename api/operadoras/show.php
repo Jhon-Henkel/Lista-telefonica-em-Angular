@@ -1,11 +1,9 @@
 <?php
-$filePatch = '../../database/operadoras.json';
-$json = file_get_contents($filePatch);
-$codigo = $_GET['codigo'];
-$operadoras = json_decode($json, true);
+require '../functions.php';
+$operadoras = json_decode(obterJson('operadoras'), true);
 
 foreach ($operadoras as $operadora) {
-    if ($operadora['codigo'] === $codigo) {
+    if ($operadora['codigo'] === $_GET['codigo']) {
         echo json_encode($operadora);
     }
 }

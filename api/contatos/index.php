@@ -1,2 +1,3 @@
 <?php
-echo file_get_contents('../../database/contatos.json');
+require '../functions.php';
+echo obterJson('contatos');

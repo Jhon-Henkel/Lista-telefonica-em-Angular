@@ -1,14 +1,19 @@
-angular.module("listaTelefonica").controller("listaOperadorasCtrl", function ($scope, operadoras) {
+angular.module("listaTelefonica").controller("listaOperadorasCtrl", function ($scope, operadoras, $http, $route, config) {
     $scope.app = "Lista Telefônica";
     $scope.operadoras = operadoras.data;
+    const apiOperadoras = config.baseURL + "/api/operadoras";
 
     $scope.apagarOperadoras = function (operadoras) {
         $scope.operadoras = operadoras.filter(function (operadora) {
-            if (!operadora.selecionado) return operadora;
+            if (operadora.selecionado) {
+                $http.post(apiOperadoras + "/delete.php", operadora.codigo)
+            }
+            $route.reload();
         });
+        $scope.verificarOperadoraSelecionada($scope.operadoras);
     };
-    $scope.isOperadoraSelecionada = function (operadoras) {
-        return operadoras.some(function (operadora) {
+    $scope.verificarOperadoraSelecionada = function (operadoras) {
+        $scope.hasOperadoraSelecionada = operadoras.some(function (operadora) {
             return operadora.selecionado;
         });
     };
