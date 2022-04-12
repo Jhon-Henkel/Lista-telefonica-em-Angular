@@ -11,3 +11,4 @@ Ao usar o projeto, deve-se dar permições nos arquivon .json dentro que se enco
 - Quando editar contato trazer a operadora vinculada já selecionada.
 - Cadastrar valores no formato R$ 1,00, R$ 1,50 (atualmente está R$ 1 e R$ 1,5).
 - Validar códigos ao cadastrar contato/operadora.
+- Cadastro de empresa e vinculo de empresa com o contato.
