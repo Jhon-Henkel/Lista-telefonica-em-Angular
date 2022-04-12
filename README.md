@@ -12,3 +12,4 @@ Ao usar o projeto, deve-se dar permições nos arquivon .json dentro que se enco
 - Validar códigos, nomes e numeros ao cadastrar contato (operadora já está feito).
 - Cadastro de empresa e vinculo de empresa com o contato.
 - Tratativa de erros da API.
+- Tornar campo operadora no contato como obrigatório, tanto no cadastro quanto na edição.
