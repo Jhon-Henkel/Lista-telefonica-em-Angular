@@ -9,11 +9,11 @@
             <th><a href="" ng-click="ordenarPor('Telefone')">Telefone</a></th>
             <th><a href="" ng-click="ordenarPor('Operadora')">Operadora</a></th>
         </tr>
-        <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos track by contato.nome | filter:criterioBusca | orderBy:criterioOrdenacao:direcaoOrdenacao">
+        <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter:criterioBusca | orderBy:criterioOrdenacao:direcaoOrdenacao">
             <td><input type="checkbox" ng-model="contato.selecionado" ng-change="verificarContatoSelecionado(contatos)"/></td>
-            <td><a href="#!/detalhesContato/{{contato.codigo}}">{{::contato.nome | name | ellipsis:14}}</a></td>
+            <td><a href="#!/detalhesContato/{{contato.codigo}}">{{::contato.nome | ellipsis:14}}</a></td>
             <td>{{::contato.telefone}}</td>
-            <td>{{::contato.operadora.nome | name}}</td>
+            <td>{{::contato.operadora}}</td>
         </tr>
     </table>
     <hr/>

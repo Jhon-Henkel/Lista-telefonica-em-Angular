@@ -9,9 +9,9 @@
             <th>Código de área</th>
             <th>Valor</th>
         </tr>
-        <tr ng-class="{'selecionado negrito': operadora.selecionado}" ng-repeat="operadora in operadoras track by operadora.codigo | filter:criterioBusca | orderBy:criterioOrdenacao:direcaoOrdenacao">
+        <tr ng-class="{'selecionado negrito': operadora.selecionado}" ng-repeat="operadora in operadoras | filter:criterioBusca | orderBy:criterioOrdenacao:direcaoOrdenacao">
             <td><input type="checkbox" ng-model="operadora.selecionado" ng-change="verificarOperadoraSelecionada(operadoras)"/></td>
-            <td><a href="#!/detalhes-operadora/{{operadora.codigo}}">{{::operadora.nome | name | ellipsis:14}}</a></td>
+            <td><a href="#!/detalhes-operadora/{{operadora.codigo}}">{{::operadora.nome | ellipsis:14}}</a></td>
             <td>{{::operadora.codigoArea}}</td>
             <td>{{::operadora.preco}}</td>
         </tr>

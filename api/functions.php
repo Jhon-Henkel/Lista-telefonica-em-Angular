@@ -18,7 +18,7 @@ function obterJson($file): string
     }elseif ($file == 'operadoras') {
         return file_get_contents(filePatch('operadoras'));
     }
-    echo 'Falha ao opbter Json '.$file.'!!!';
+    echo 'Falha ao obter Json '.$file.'!!!';
     exit;
 }
 

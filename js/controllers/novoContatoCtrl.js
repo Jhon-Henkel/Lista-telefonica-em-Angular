@@ -6,6 +6,7 @@ angular.module("listaTelefonica").controller("novoContatoCtrl", function ($scope
         contato.codigo = serialGenerator.generate();
         contato.data = new Date();
         contato.dataAlteracao = "Nunca";
+        contato.operadora = contato.operadora.codigo;
         contatosAPI.saveContato(contato).then(function (response) {
             delete $scope.contato;
             $scope.contatoForm.$setPristine();
