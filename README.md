@@ -4,7 +4,7 @@ Lista telefonica em Angular feito seguindo vídeo do curso de angular do Rodrigo
 
 API feita em JSON, projeto ainda não se encontra finalizado.
 
-Ao usar o projeto, deve-se dar permições nos arquivon .json dentro que se encontra dentro da pasta database.
+Ao usar o projeto, deve-se dar permissões nos arquivos .json dentro que se encontra dentro da pasta database.
 
 # Fazer:
 - Exibir mensagem de que não é possivel excluir operadora com usuario vinculado, ou que operadora já existe.
