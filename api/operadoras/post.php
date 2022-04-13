@@ -3,12 +3,14 @@ require '../functions.php';
 $jsonDecode = json_decode(file_get_contents(filePatch('operadoras')), true);
 $postDecode = json_decode(file_get_contents('php://input'), true);
 foreach ($jsonDecode as $contato) {
-    if (
-        $contato['codigo'] == $postDecode['codigo'] ||
-        $contato['nome'] == ucwords(strtolower($postDecode['nome'])) ||
-        $contato['codigoArea'] == $postDecode['codigoArea']
-    ) {
-        echo 'Erro, código, código de área ou nome já existe!';
+    if ($contato['codigo'] == $postDecode['codigo']) {
+        echo 'Erro, código já existe!';
+        exit;
+    }elseif ($contato['nome'] == ucwords(strtolower($postDecode['nome']))) {
+        echo 'Erro, nome já existe!';
+        exit;
+    }elseif ($contato['codigoArea'] == $postDecode['codigoArea']) {
+        echo 'Erro, código de área já existe!';
         exit;
     }
 }

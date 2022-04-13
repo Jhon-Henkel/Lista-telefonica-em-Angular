@@ -1,10 +1,13 @@
 <div class="jumbotron">
     <h3>Cadastrar novo contato</h3>
     <hr/>
+    <div class="alert alert-warning">
+        Todos os campos são obrigatórios.
+    </div>
     <form name="contatoForm">
         <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="2"/>
         <input class="form-control" type="text" ng-model="contato.telefone" name="fone" placeholder="Telefone" ng-required="true" ng-pattern="/^\(\d{2}\) \d{4,5}-\d{4}$/" ui-phone/>
-        <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome group by operadora.categoria for operadora in operadoras | orderBy:'nome'">
+        <select class="form-control" ng-required="true" ng-model="contato.operadora" ng-options="operadora.nome group by operadora.categoria for operadora in operadoras | orderBy:'nome'">
             <option value="">--Selecione uma operadora--</option>
         </select>
         <input type="hidden" ng-model="contato.dataAlteracao">

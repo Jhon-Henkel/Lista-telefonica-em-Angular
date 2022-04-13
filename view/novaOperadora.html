@@ -1,15 +1,18 @@
 <div class="jumbotron">
     <h3>Cadastrar nova operadora</h3>
     <hr/>
+    <div class="alert alert-warning">
+        Todos os campos são obrigatórios, exceto preço.
+    </div>
     <form name="operadoraForm">
         <input class="form-control" type="text" ng-model="operadora.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="2"/>
         <input class="form-control" type="text" ng-model="operadora.codigoArea" name="codigoArea" placeholder="Código de área" ng-required="true" ng-minlength="2" ui-codigo-area/>
-        <select class="form-control" ng-model="operadora.categoria">
+        <select class="form-control" ng-model="operadora.categoria" ng-required="true">
             <option value="">--Selecione uma categoria--</option>
             <option value="Celular">Celular</option>
             <option value="Fixo">Fixo</option>
         </select>
-        <input class="form-control" type="text" ng-model="operadora.preco" name="preco" placeholder="Valor do minuto" ng-minlength="1" ui-valor/>
+        <input class="form-control" type="text" ng-model="operadora.preco" name="preco" placeholder="Valor do minuto (R$)" ng-minlength="1" ui-valor/>
         <input type="hidden" ng-model="operadora.dataAlteracao">
     </form>
     <div ng-show="operadoraForm.nome.$dirty" ng-messages="operadoraForm.nome.$error">
@@ -28,6 +31,6 @@
             O campo Código de área deve conter no mínimo 2 caracteres!
         </div>
     </div>
-    <button class="btn btn-primary btn-block" ng-click="adicionarOperadora(operadora)" ng-disabled="contatoForm.$invalid">Adicionar Operadora</button>
+    <button class="btn btn-primary btn-block" ng-click="adicionarOperadora(operadora)" ng-disabled="operadoraForm.$invalid">Adicionar Operadora</button>
     <a class="btn btn-danger btn-block" href="#!/operadoras">Cancelar</a>
 </div>

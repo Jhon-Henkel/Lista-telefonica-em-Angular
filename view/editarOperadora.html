@@ -1,6 +1,9 @@
 <div class="jumbotron">
     <h3>Editar Operadora</h3>
     <hr/>
+    <div class="alert alert-warning">
+        Todos os campos são obrigatórios, exceto preço.
+    </div>
     <form name="operadoraForm">
         <input class="form-control" type="text" ng-model="operadora.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="2"/>
         <input class="form-control" type="text" ng-model="operadora.codigoArea" name="codigoArea" placeholder="Código de área" ng-required="true" ng-minlength="2" ui-codigo-area/>
@@ -8,7 +11,7 @@
             <option value="Celular">Celular</option>
             <option value="Fixo">Fixo</option>
         </select>
-        <input class="form-control" type="text" ng-model="operadora.preco" name="preco" placeholder="Valor do minuto" ng-minlength="1" ui-valor/>
+        <input class="form-control" type="text" ng-model="operadora.preco" name="preco" placeholder="Valor do minuto (R$)" ng-minlength="1" ui-valor/>
     </form>
     <div ng-show="operadoraForm.nome.$dirty" ng-messages="operadoraForm.nome.$error">
         <div class="alert alert-danger" ng-message="required">
