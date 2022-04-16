@@ -72,6 +72,37 @@ angular.module("listaTelefonica").config(function ($routeProvider) {
             }
         }
     });
+    $routeProvider.when("/empresas", {
+        templateUrl: "view/empresas.html",
+        controller: "listaEmpresasCtrl",
+        resolve: {
+            empresas: function (empresasAPI) {
+                return empresasAPI.getEmpresas();
+            }
+        }
+    });
+    $routeProvider.when("/nova-empresa", {
+        templateUrl: "view/novaEmpresa.html",
+        controller: "novaEmpresaCtrl",
+    });
+    $routeProvider.when("/detalhes-empresa/:codigo", {
+        templateUrl: "view/detalhesEmpresa.html",
+        controller: "detalhesEmpresaCtrl",
+        resolve: {
+            empresa: function (empresasAPI, $route) {
+                return empresasAPI.getEmpresa($route.current.params.codigo);
+            }
+        }
+    });
+    $routeProvider.when("/editar-empresa/:codigo", {
+        templateUrl: "view/editarEmpresa.html",
+        controller: "editarEmpresaCtrl",
+        resolve: {
+            empresa: function (empresasAPI, $route) {
+                return empresasAPI.getEmpresa($route.current.params.codigo);
+            }
+        }
+    });
     $routeProvider.when("/error", {
         templateUrl: "view/error.html",
     });

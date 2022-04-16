@@ -1,0 +1,31 @@
+<div class="jumbotron">
+    <h3>Cadastrar nova empresa</h3>
+    <hr/>
+    <div class="alert alert-warning">
+        Todos os campos são obrigatórios.
+    </div>
+    <form name="empresaForm">
+        <input class="form-control" type="text" ng-model="empresa.nome" name="nome" placeholder="Nome da empresa" ng-required="true" ng-minlength="2"/>
+        <input class="form-control" type="text" ng-model="empresa.telefone" name="fone" placeholder="Telefone da empresa" ng-required="true" ng-pattern="/^\(\d{2}\) \d{4,5}-\d{4}$/" ui-phone/>
+        <input type="hidden" ng-model="empresa.dataAlteracao">
+    </form>
+    <div ng-show="empresaForm.nome.$dirty" ng-messages="empresaForm.nome.$error">
+        <div class="alert alert-danger" ng-message="required">
+            Por favor, preencha o campo nome da empresa!
+        </div>
+        <div class="alert alert-danger" ng-message="minlength">
+            O campo nome da empresa deve conter no mínimo 2 caracteres!
+        </div>
+    </div>
+    <div ng-show="empresaForm.fone.$dirty" ng-messages="empresaForm.fone.$error">
+        <div class="alert alert-danger" ng-message="required">
+            Por favor, preencha o campo telefone da empresa!
+        </div>
+        <div class="alert alert-warning" ng-message="pattern">
+            Um numero de telefone válido deve ser digitado!<br>
+            Ex.: (12) 1234-1234 ou (12) 12345-1234
+        </div>
+    </div>
+    <button class="btn btn-success btn-block" ng-click="adicionarEmpresa(empresa)" ng-disabled="empresaForm.$invalid">Adicionar Empresa</button>
+    <a class="btn btn-danger btn-block" href="#!/empresas">Cancelar</a>
+</div>

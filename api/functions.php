@@ -6,6 +6,8 @@ function filePatch($file): string
         return '../../database/contatos.json';
     }elseif ($file == 'operadoras') {
         return '../../database/operadoras.json';
+    }elseif ($file == 'empresas') {
+        return '../../database/empresas.json';
     }
     echo 'Falha ao carregar diretório da database '.$file.'!!!';
     exit;
@@ -17,6 +19,8 @@ function obterJson($file): string
         return file_get_contents(filePatch('contatos'));
     }elseif ($file == 'operadoras') {
         return file_get_contents(filePatch('operadoras'));
+    }elseif ($file == 'empresas') {
+        return file_get_contents(filePatch('empresas'));
     }
     echo 'Falha ao obter Json '.$file.'!!!';
     exit;

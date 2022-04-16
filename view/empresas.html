@@ -1,0 +1,21 @@
+<div class="jumbotron">
+    <h3>Empresas</h3>
+    <hr/>
+    <input type="text" class="form-control" ng-model="criterioBusca" ng-model-options="{updateOn: 'default blur', debounce:{default: 500, blur: 0}}" placeholder="Buscar por..."/>
+    <table ng-show="empresas.length > 0" class="table table-striped">
+        <tr>
+            <th></th>
+            <th><a href="" ng-click="ordenarPor('Empresa')">Empresa</a></th>
+            <th><a href="" ng-click="ordenarPor('Telefone')">Telefone</a></th>
+        </tr>
+        <tr ng-class="{'selecionado negrito': empresa.selecionado}" ng-repeat="empresa in empresas | filter:criterioBusca | orderBy:criterioOrdenacao:direcaoOrdenacao">
+            <td><input type="checkbox" ng-model="empresa.selecionada" ng-change="verificarEmpresaSelecionada(empresas)"/></td>
+            <td><a href="#!/detalhes-empresa/{{empresa.codigo}}">{{::empresa.nome | ellipsis:14}}</a></td>
+            <td>{{::empresa.telefone}}</td>
+        </tr>
+    </table>
+    <hr/>
+    <a class="btn btn-success btn-block" href="#!/nova-empresa">Nova Empresa</a>
+    <a class="btn btn-primary btn-block" href="#!/contatos">Contatos</a>
+    <button class="btn btn-danger btn-block" ng-click="apagarEmpresas(empresas)" ng-if="hasEmpresaSelecionada">Apagar Empresa</button>
+</div>

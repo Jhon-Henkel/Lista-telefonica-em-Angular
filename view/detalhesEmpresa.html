@@ -1,0 +1,24 @@
+<div class="jumbotron">
+    <h3>Detalhes da Empresa</h3>
+    <table class="table">
+        <tr class="start">
+            <td>Nome:</td>
+            <td>{{empresa.nome}}</td>
+        </tr>
+        <tr class="start">
+            <td>Número:</td>
+            <td>{{empresa.telefone}}</td>
+        </tr>
+        <tr class="start">
+            <td>Data de inclusão:</td>
+            <td>{{empresa.data | date:"dd/MM/yyyy"}}</td>
+        </tr>
+        <tr class="start">
+            <td>Alterado em:</td>
+            <td>{{empresa.dataAlteracao | date:"dd/MM/yyyy"}}</td>
+        </tr>
+    </table>
+    <a class="btn btn-primary btn-success btn-block" href="#!/editar-empresa/{{empresa.codigo}}">Editar Empresa</a>
+    <button class="btn btn-danger btn-block" ng-click="deleteEmpresa(empresa.codigo)">Apagar Empresa</button>
+    <a class="btn btn-light btn-block" href="#!/empresas">Voltar</a>
+</div>
