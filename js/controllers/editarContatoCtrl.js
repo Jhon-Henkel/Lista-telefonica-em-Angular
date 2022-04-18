@@ -1,6 +1,6 @@
-angular.module("listaTelefonica").controller("editarContatoCtrl", function ($http, $scope, contatosAPI, serialGenerator, $location, operadoras, contato, config) {
+angular.module("listaTelefonica").controller("editarContatoCtrl", function ($http, $scope, contatosAPI, serialGenerator, $location, empresas, contato, config) {
     $scope.app = "Lista Telefônica";
-    $scope.operadoras = operadoras.data;
+    $scope.empresas = empresas.data;
     $scope.contato = contato.data;
     const apiContatos = config.baseURL + "/api/contatos";
 

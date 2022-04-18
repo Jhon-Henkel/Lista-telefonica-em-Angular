@@ -1,7 +1,6 @@
-angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, operadoras, serialGenerator, $http, config, $route) {
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, serialGenerator, $http, config, $route) {
     $scope.app = "Lista Telefônica";
     $scope.contatos = contatos.data;
-    $scope.operadoras = operadoras.data;
     const apiContatos = config.baseURL + "/api/contatos";
 
     $scope.apagarContatos = function (contatos) {

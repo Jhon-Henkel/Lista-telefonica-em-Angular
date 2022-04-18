@@ -1,13 +1,13 @@
 <?php
 require '../functions.php';
 $contatos = json_decode(obterJson('contatos'), true);
-$operadoras = json_decode(obterJson('operadoras'), true);
+$empresas = json_decode(obterJson('empresas'), true);
 
 foreach ($contatos as $contato) {
-    foreach ($operadoras as $operadora) {
+    foreach ($empresas as $empresa) {
         if ($contato['codigo'] === $_GET['codigo']) {
-            if ($contato['operadora'] === $operadora['codigo']) {
-                $contato['operadora'] = $operadora['nome'];
+            if ($contato['empresa'] === $empresa['codigo']) {
+               $contato['empresa'] = $empresa['nome'];
                 echo json_encode($contato);
             }
         }

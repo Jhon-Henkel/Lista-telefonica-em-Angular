@@ -7,18 +7,17 @@
             <th></th>
             <th><a href="" ng-click="ordenarPor('Nome')">Nome</a></th>
             <th><a href="" ng-click="ordenarPor('Telefone')">Telefone</a></th>
-            <th><a href="" ng-click="ordenarPor('Operadora')">Operadora</a></th>
+            <th><a href="" ng-click="ordenarPor('Empresa')">Empresa</a></th>
         </tr>
         <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter:criterioBusca | orderBy:criterioOrdenacao:direcaoOrdenacao">
             <td><input type="checkbox" ng-model="contato.selecionado" ng-change="verificarContatoSelecionado(contatos)"/></td>
             <td><a href="#!/detalhesContato/{{contato.codigo}}">{{::contato.nome | ellipsis:14}}</a></td>
             <td>{{::contato.telefone}}</td>
-            <td>{{::contato.operadora}}</td>
+            <td><a href="#!/detalhes-empresa/{{contato.empresaCodigo}}">{{::contato.empresa}}</a></td>
         </tr>
     </table>
     <hr/>
-    <a class="btn btn-success btn-block" href="#!/empresas">Empresas</a>
     <a class="btn btn-primary btn-block" href="#!/novo-contato">Novo Contato</a>
-    <a class="btn btn-primary btn-block" href="#!/operadoras">Operadoras</a>
+    <a class="btn btn-success btn-block" href="#!/empresas">Empresas</a>
     <button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-if="hasContatoSelecionado">Apagar Contatos</button>
 </div>
