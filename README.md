@@ -8,5 +8,4 @@ Ao usar o projeto, deve-se dar permissões nos arquivos .json que se encontra na
 
 # Fazer:
 - Quando editar contato trazer a operadora vinculada já selecionada.
-- Cadastro de empresa e vinculo de empresa com o contato.
 - Tratativa de erros da API.

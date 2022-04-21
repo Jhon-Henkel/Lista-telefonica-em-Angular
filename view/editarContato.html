@@ -7,8 +7,9 @@
     <form name="contatoForm">
         <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="2"/>
         <input class="form-control" type="text" ng-model="contato.telefone" name="fone" placeholder="Telefone" ng-required="true" ng-pattern="/^\(\d{2}\) \d{4,5}-\d{4}$/" ui-phone/>
-        <select class="form-control" ng-model="contato.empresa"
-                ng-options="empresa.nome for empresa in empresas track by empresa.nome"
+        <select class="form-control"
+                ng-model="contato.empresa"
+                ng-options="contato.empresa as empresa.nome for empresa in empresas track by empresa.nome"
                 ng-required="true">
         </select>
         <input type="hidden" ng-model="contato.codigo"/>

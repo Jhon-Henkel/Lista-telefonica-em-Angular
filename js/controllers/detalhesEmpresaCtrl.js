@@ -7,4 +7,8 @@ angular.module("listaTelefonica").controller("detalhesEmpresaCtrl", function ($s
             $location.path("/empresas");
         });
     }
+
+    $scope.goBack = function () {
+        window.history.back();
+    }
 });
