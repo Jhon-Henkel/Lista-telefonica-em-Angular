@@ -1,3 +1,3 @@
 angular.module("listaTelefonica").constant("config", {
-    baseURL: "http://localhost"
+    baseURL: "http://localhost/Lista-telefonica-em-Angular"
 });
