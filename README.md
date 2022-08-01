@@ -10,8 +10,3 @@ API feita em JSON, nesse projeto não é utilizado banco de dados para armazenar
 Ao usar o projeto, deve-se dar permissões nos arquivos .json que se encontra na pasta database.
 
 O objetivo desse projeto foi aprender AngularJS e SPA, além de também ganhar um conhecimento inicial bem básico sobre API's.
-
-# Fazer:
-- Quando editar contato trazer a operadora vinculada já selecionada.
-- Tratativa de erros da API (alert).
-- Colocar online.
